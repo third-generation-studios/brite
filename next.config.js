@@ -1,6 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-}
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: 'img.clerk.com',
+      },
+      {
+        protocol: "https",
+        hostname: "tgs-song-files.s3.us-east-1.amazonaws.com"
+      }
 
-module.exports = nextConfig
+    ]
+  }
+};
+
+module.exports = nextConfig;

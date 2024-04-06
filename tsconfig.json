@@ -26,7 +26,8 @@
         "@/app/*": ["app/*"],
         "@/lib/*": ["lib/*"],
         "@/styles/*": ["styles/*"],
-        "@/public/*": ["public/*"]
+        "@/public/*": ["public/*"],
+        "@/config/*": ["config/*"]
     },
     "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules"]
