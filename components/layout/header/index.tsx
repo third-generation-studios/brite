@@ -9,6 +9,7 @@ import AltLogo from "../../../public/assets/icons/brite-logo-alt.png";
 import Button from "../../Button";
 import { NavMenu } from "../../../lib/constants";
 import { NavMenuType } from "../../../lib/types";
+import UserIcon from "./user-icon/user-icon";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -30,7 +31,7 @@ export default function Navbar() {
                         <Image className="" src={AltLogo} alt="logo" width={100} />
                     </Link>
                     {/* LINKS  */}
-                    <ul className="hidden text-gray-600 items-center lg:flex">
+                    <ul className="hidden text-gray-600 items-center xl:flex">
                         {NavMenu.map((item: NavMenuType) => (
                             <li
                                 className={`mx-2 transition-all duration-300 ease-in-out hover:text-blue-700 hover:underline ${
@@ -46,7 +47,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 {/* NAV BUTTONS */}
-                <ul className="hidden items-center lg:flex">
+                <ul className="hidden items-center xl:flex">
                     <Link className="mr-4" href={"/contact-us"}>
                         <Button roundedFull name="Contact Us" altColor />
                     </Link>
@@ -57,6 +58,9 @@ export default function Navbar() {
                             name="Get Your Free Estimate"
                         />
                     </Link>
+                    <div className="ml-4">
+                        <UserIcon />
+                    </div>
                 </ul>
             </div>
         </nav>

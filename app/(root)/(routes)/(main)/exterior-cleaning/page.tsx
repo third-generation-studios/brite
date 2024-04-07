@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import { GiWindow } from "react-icons/gi";
 import { IoWater, IoWaterOutline } from "react-icons/io5";
 
-import IconBanner from "../../../../components/icon-banner/IconBanner";
+import IconBanner from "../../../../../components/icon-banner/IconBanner";
 
-import PressureWashing from "../../../../public/assets/imgs/ex-cleaning.png";
-import Splash from "../../../../components/Splash";
-import { NavMenuItems } from "../../../../lib/constants";
+import PressureWashing from "../../../../../public/assets/imgs/ex-cleaning.png";
+import Splash from "../../../../../components/Splash";
+import { NavMenuItems } from "../../../../../lib/constants";
 
 export const metadata: Metadata = {
     title: "Brite's Exterior Cleaning",

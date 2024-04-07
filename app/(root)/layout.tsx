@@ -11,7 +11,7 @@ export default async function SetupLayout({ children }: { children: React.ReactN
         <div className="w-full flex flex-col items-center h-full">
             <Navbar />
             <div className="w-full flex flex-col bg-white">{children}</div>
-            <ContactFormContainer />
+            {/* <ContactFormContainer /> */}
             <Footer />
         </div>
     );

@@ -5,11 +5,11 @@ import { GiRabbit } from "react-icons/gi";
 import { FaWrench } from "react-icons/fa";
 import { CiRuler } from "react-icons/ci";
 
-import IconBanner from "../../../../components/icon-banner/IconBanner";
+import IconBanner from "../../../../../components/icon-banner/IconBanner";
 
 import ChristmasLightingSplash from "../../../../public/assets/imgs/christmas-lights.jpg";
-import Splash from "../../../../components/Splash";
-import { NavMenuItems } from "../../../../lib/constants";
+import Splash from "../../../../../components/Splash";
+import { NavMenuItems } from "../../../../../lib/constants";
 
 export const metadata: Metadata = {
     title: "Brite's Holiday Lighting",
