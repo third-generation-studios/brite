@@ -22,6 +22,8 @@
         "zustand": "^4.4.7"
     },
     "dependencies": {
+        "@aws-sdk/client-s3": "^3.550.0",
+        "@aws-sdk/s3-request-presigner": "^3.550.0",
         "@clerk/nextjs": "^4.29.3",
         "@emailjs/browser": "^3.12.1",
         "@emotion/react": "^11.11.3",
@@ -32,6 +34,7 @@
         "@prisma/client": "^5.12.1",
         "@vercel/analytics": "^1.2.2",
         "@vercel/speed-insights": "^1.0.10",
+        "aws-sdk": "^2.1594.0",
         "axios": "^1.6.5",
         "dotenv": "^16.3.1",
         "next": "^14.0.4",
