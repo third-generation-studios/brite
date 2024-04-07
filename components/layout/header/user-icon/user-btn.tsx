@@ -4,8 +4,9 @@ import React, { Fragment } from "react";
 import Image from "next/image";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { Popover, Transition } from "@headlessui/react";
-
 import { PiGearSixLight, PiSignOut } from "react-icons/pi";
+
+import DummyImg from "@/public/assets/imgs/dummy-img.jpg";
 
 import UserPopoverPanelItem from "./user-popover-panel-item";
 
@@ -14,14 +15,20 @@ const UserBtn = () => {
     const { signOut } = useClerk();
 
     return (
-        <div className="top-16 w-full max-w-sm flex text-center h-full mx-4">
+        <div className="top-16 w-full max-w-sm flex text-center h-full mx-2">
             <Popover className="relative flex items-center">
                 {({ close }) => (
                     <>
                         <Popover.Button>
                             {isSignedIn && (
                                 <span className="flex items-center justify-center hover:bg-zinc-500 hover:scale-125 hover:rounded-full transition-all duration-300 ease-in-out">
-                                    <Image className="rounded-full" width={25} height={25} src={user!.imageUrl} alt="user-image" />
+                                    <Image
+                                        className="rounded-full"
+                                        width={30}
+                                        height={30}
+                                        src={user!.imageUrl}
+                                        alt="user-image"
+                                    />
                                 </span>
                             )}
                         </Popover.Button>
@@ -42,7 +49,7 @@ const UserBtn = () => {
                                                 className="rounded-full flex items-center"
                                                 width={40}
                                                 height={40}
-                                                src={user!.imageUrl}
+                                                src={user?.imageUrl ? user.imageUrl : DummyImg}
                                                 alt="user-image"
                                             />
                                         </span>
@@ -57,7 +64,12 @@ const UserBtn = () => {
                                     <div className="flex flex-col">
                                         <UserPopoverPanelItem
                                             onClick={close}
-                                            icon={<PiGearSixLight className="text-gray-500" size={15} />}
+                                            icon={
+                                                <PiGearSixLight
+                                                    className="text-gray-500"
+                                                    size={15}
+                                                />
+                                            }
                                             page={{
                                                 title: "My Profile",
                                                 link: "/profile",
