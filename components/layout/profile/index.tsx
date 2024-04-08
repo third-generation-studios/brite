@@ -1,21 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import { useClerk } from "@clerk/nextjs";
 
 import { GrContactInfo } from "react-icons/gr";
 import { MdShareLocation } from "react-icons/md";
 
 import { ProfileNav, ProfileNavMenu } from "@/lib/constants";
 import ItemCard from "./ItemCard";
-import { useRouter } from "next/navigation";
 import ContactDetails from "./ContactDetails";
 import SavedAddresses from "./SavedAddresses";
+import SignOutBtn from "@/components/SignOutBtn";
 
 const Profile = () => {
     const [selected, setSelected] = useState<string>(ProfileNav.CONTACT);
-    const { signOut } = useClerk();
-    const router = useRouter();
 
     const getIcon = (item: string) => {
         switch (item) {
@@ -37,12 +34,13 @@ const Profile = () => {
     };
 
     return (
-        <div className="flex bg-zinc-300 items-center w-full">
+        <div className="flex bg-zinc-300 w-full flex-col lg:flex-row">
             {/* NAV */}
-            <div className="bg-zinc-500 h-full p-4 md:w-max">
-                {ProfileNavMenu.map((item) => {
+            <nav className="bg-zinc-500 h-full p-4 flex flex-col w-full lg:w-[300px]">
+                {ProfileNavMenu.map((item, index) => {
                     return (
                         <ItemCard
+                            key={index}
                             icon={getIcon(item.title)}
                             title={item.title}
                             selected={selected === item.title}
@@ -50,17 +48,17 @@ const Profile = () => {
                         />
                     );
                 })}
+                {/* SIGN OUT BTN 1 */}
                 <div>
-                    <button
-                        className="flex justify-center p-2 bg-black text-white mt-20 w-full rounded-lg"
-                        onClick={() => signOut(() => router.push("/"))}
-                    >
-                        Sign out
-                    </button>
+                    <SignOutBtn hiddenOnMobile />
                 </div>
-            </div>
+            </nav>
             {/* PROFILE CONTENT */}
-            <div className="flex w-full h-full flex-1">{renderProfileContent()}</div>
+            <section className="flex w-full h-full flex-1">{renderProfileContent()}</section>
+            {/* SIGN OUT BTN 1 */}
+            <aside className="w-full my-4 px-10 md:px-0 md:w-[400px]">
+                <SignOutBtn hiddenOnMobile={false} />
+            </aside>
         </div>
     );
 };

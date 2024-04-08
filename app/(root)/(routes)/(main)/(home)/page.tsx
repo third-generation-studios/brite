@@ -6,7 +6,7 @@ import SplashSlideShow from "../../../../../components/SplashSlideShow";
 
 export default async function Home() {
     return (
-        <section>
+        <section className="w-full flex flex-col flex-1">
             <SplashSlideShow />
             <WelcomeMessage />
             <SocialProof />

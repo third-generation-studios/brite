@@ -9,7 +9,7 @@ import AltLogo from "../../../public/assets/icons/brite-logo-alt.png";
 import Button from "../../Button";
 import { NavMenu } from "../../../lib/constants";
 import { NavMenuType } from "../../../lib/types";
-import UserIcon from "./user-icon/user-icon";
+import UserIcon from "./user-icon";
 
 export default function Navbar() {
     const pathname = usePathname();

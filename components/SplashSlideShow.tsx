@@ -7,8 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css"; // Import Swiper styles
 
-import Logo from "../public/assets/icons/brite-logo.png";
-import AltLogo from "../public/assets/icons/brite-logo-alt.png";
+import Logo from "@/public/assets/icons/brite-logo.png";
+import AltLogo from "@/public/assets/icons/brite-logo-alt.png";
 import { HomePageImages } from "../lib/Images";
 import ContactFormOverlay from "./contact-form-section/ContactFormOverlay";
 
@@ -30,7 +30,6 @@ const SplashSlideShow = () => {
                     <SwiperSlide key={item.title}>
                         <div className="w-full h-[200px] flex justify-center items-center md:h-screen">
                             <Image
-                                loading="eager"
                                 className="h-full w-full object-cover"
                                 src={item.img}
                                 alt={item.title}

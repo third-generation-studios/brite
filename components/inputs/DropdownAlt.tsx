@@ -43,7 +43,7 @@ const DropdownAlt = ({
                                 </option>
                             ))}
                         </select>
-                        {(errors[inputName] && errors[inputName].type === "required") ||
+                        {(errors[inputName] && errors[inputName]!.type === "required") ||
                         field.value === "None" ? (
                             <p className="text-sm text-red-600 ml-4">{errorText}</p>
                         ) : null}

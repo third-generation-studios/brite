@@ -22,7 +22,7 @@ export enum FAQNavLinks {
 
 export enum ProfileNav {
     CONTACT = "Contact Details",
-    ADDRESSES = "Saved Addresses",
+    ADDRESSES = "Addresses",
 }
 
 export enum NavMenuItems {

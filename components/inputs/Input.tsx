@@ -35,10 +35,10 @@ const Input = ({
                         type="text"
                         placeholder={placeholder}
                     />
-                    {errors && errors[inputName] && errors[inputName].type === "required" && (
+                    {errors && errors[inputName] && errors[inputName]!.type === "required" && (
                         <p className="text-sm text-red-600 ml-4">{errorRequiredText}</p>
                     )}
-                    {errors && errors[inputName] && errors[inputName].type === "pattern" && (
+                    {errors && errors[inputName] && errors[inputName]!.type === "pattern" && (
                         <p className="text-sm text-red-600 ml-4">{errorPatternText}</p>
                     )}
                 </div>

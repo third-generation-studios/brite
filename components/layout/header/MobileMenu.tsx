@@ -9,6 +9,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Button from "../../Button";
 import { AltNavMenuItems, AltNavMenuLinks, NavMenu } from "../../../lib/constants";
 import { NavMenuType } from "../../../lib/types";
+import UserIcon from "./user-icon";
 
 export default function MobileMenu() {
     const pathname = usePathname();
@@ -21,7 +22,10 @@ export default function MobileMenu() {
     }, [pathname]);
 
     return (
-        <div className="relative">
+        <div className="relative flex items-center">
+            <div>
+                <UserIcon />
+            </div>
             <button
                 onClick={openMobileMenu}
                 aria-label="Open mobile menu"
