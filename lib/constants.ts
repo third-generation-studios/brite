@@ -20,6 +20,11 @@ export enum FAQNavLinks {
     SOFT_WASHING = "#soft-washing",
 }
 
+export enum ProfileNav {
+    CONTACT = "Contact Details",
+    ADDRESSES = "Saved Addresses",
+}
+
 export enum NavMenuItems {
     HOME = "Home",
     EXTERIOR_CLEANING = "Exterior Cleaning",
@@ -45,6 +50,17 @@ export enum AltNavMenuLinks {
     CONTACT_US = "/contact-us",
     ESTIMATE = "/estimate",
 }
+
+export const ProfileNavMenu: NavMenuType[] = [
+    {
+        title: ProfileNav.CONTACT,
+        link: "",
+    },
+    {
+        title: ProfileNav.ADDRESSES,
+        link: "",
+    },
+];
 
 export const FAQNavMenu: NavMenuType[] = [
     {
