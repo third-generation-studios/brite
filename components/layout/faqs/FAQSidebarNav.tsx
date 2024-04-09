@@ -63,7 +63,7 @@ const FAQSidebarNav = (props: IFAQSidebarNavProps) => {
                         );
                     } else {
                         return (
-                            <div>
+                            <div key={index}>
                                 {dropdownOpen && (
                                     <div
                                         className="py-4 px-8 text-blue-600 text-sm md:hidden"

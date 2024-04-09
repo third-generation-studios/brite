@@ -46,8 +46,10 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
     try {
         const {
-            phone,
-            email,
+            primaryPhoneNumber,
+            phoneNumbers,
+            primaryEmailAddress,
+            emailAddresses,
             name,
             img,
             purchases,
@@ -74,8 +76,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
                 id: params.id,
             },
             data: {
-                phone: phone ?? existingUser.phone,
-                email: email ?? existingUser.email,
+                primaryPhoneNumber: primaryPhoneNumber ?? existingUser.primaryPhoneNumber,
+                phoneNumbers: phoneNumbers ?? existingUser.phoneNumbers,
+                primaryEmailAddress: primaryEmailAddress ?? existingUser.primaryEmailAddress,
+                emailAddresses: emailAddresses ?? existingUser.emailAddresses,
                 name: name ?? existingUser.name,
                 img: img ?? existingUser.img,
                 purchases: purchases ?? existingUser.purchases,

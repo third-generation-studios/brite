@@ -12,48 +12,26 @@ const ContactDetails = () => {
 
     const renderEmailAddresses = () => {
         return emailAddresses.map((item, index) => {
-            if (index === 0) {
-                return (
-                    <BasicInput
-                        key={index}
-                        label="Primary Email Address"
-                        inputValue={item.emailAddress}
-                    />
-                );
-            } else if (index === 1) {
-                return (
-                    <BasicInput
-                        key={index}
-                        label="Other Email Addresses"
-                        inputValue={item.emailAddress}
-                    />
-                );
-            } else {
-                return <BasicInput key={index} inputValue={item.emailAddress} />;
-            }
+            return (
+                <div key={index}>
+                    <label className="underline underline-offset-2" htmlFor="email-address">
+                        Email Addresses
+                    </label>
+                    <BasicInput key={index} inputValue={item.emailAddress} />
+                </div>
+            );
         });
     };
     const renderPhoneNumbers = () => {
         return phoneNumbers.map((item, index) => {
-            if (index === 0) {
-                return (
-                    <BasicInput
-                        key={index}
-                        label="Primary Phone Number"
-                        inputValue={item.phoneNumber}
-                    />
-                );
-            } else if (index === 1) {
-                return (
-                    <BasicInput
-                        key={index}
-                        label="Other Phone Numbers"
-                        inputValue={item.phoneNumber}
-                    />
-                );
-            } else {
-                return <BasicInput key={index} inputValue={item.phoneNumber} />;
-            }
+            return (
+                <div key={index}>
+                    <label className="underline underline-offset-2" htmlFor="email-address">
+                        Phone Numbers
+                    </label>
+                    <BasicInput key={index} inputValue={item.phoneNumber} />
+                </div>
+            );
         });
     };
 
@@ -62,11 +40,18 @@ const ContactDetails = () => {
             {/* TITLE */}
             <h5 className="flex flex-1 h-full w-full text-3xl p-4">Contact Details</h5>
             {/* CONTENT */}
-            <div>
+            <div className="mx-10">
                 {/* NAME */}
-                <BasicInput label="Full Name" inputValue={fullName} />
+                <div>
+                    <label className="underline underline-offset-2" htmlFor="email-address">
+                        Full Name
+                    </label>
+                    <BasicInput inputValue={fullName} />
+                </div>
                 {/* EMAIL ADDRESSES */}
                 {renderEmailAddresses()}
+                {/* PHONE NUMBERS */}
+                {renderPhoneNumbers()}
             </div>
         </div>
     );

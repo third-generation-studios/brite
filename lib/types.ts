@@ -5,8 +5,10 @@ export type NavMenuType = {
 
 export type UserType = {
     id: string;
-    phone: string;
-    email: string;
+    primaryPhoneNumber: string;
+    phoneNumbers: string[];
+    primaryEmailAddress: string;
+    emailAddresses: string[];
     name: string;
     img: any;
     purchases: string;
@@ -21,7 +23,7 @@ export type AddressType = {
     street: string;
     city: string;
     state: string;
-    zip: string;
+    zipCode: string;
 };
 
 export type ComponentType = {

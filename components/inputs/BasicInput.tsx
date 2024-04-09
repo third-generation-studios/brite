@@ -6,7 +6,6 @@ import { TfiPencilAlt } from "react-icons/tfi";
 
 interface IBasicInputProps {
     inputValue: string;
-    label?: string;
 }
 
 const BasicInput = (props: IBasicInputProps) => {
@@ -24,13 +23,7 @@ const BasicInput = (props: IBasicInputProps) => {
     };
 
     return (
-        <div className="flex flex-col ml-10">
-            {props.label && (
-                <label
-                    className="underline underline-offset-2"
-                    htmlFor="name"
-                >{`${props.label}:`}</label>
-            )}
+        <div className="flex flex-col">
             <div className="flex items-center">
                 <input
                     onChange={handleInputChange}

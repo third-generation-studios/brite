@@ -1,4 +1,4 @@
-import PageBanner from "@/components/PageBanner";
+import PageBanner from "@/components/layout/sections/PageBanner";
 import Profile from "@/components/layout/profile";
 
 export default function ProfilePage() {
