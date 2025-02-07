@@ -1,6 +1,7 @@
 import React from "react";
 import FAQContainer from "./container";
 import FAQItem from "./item";
+import FAQSidebarNav from "./sidebar-nav";
 import {
     BriteFAQs,
     ExteriorCleaningFAQs,
@@ -9,9 +10,8 @@ import {
     SoftWashingFAQs,
     TrashBinCleaningFAQs,
     WindowCleaningFAQs,
-} from "../../../../lib/FAQItems";
-import FAQSidebarNav from "./sidebar-nav";
-import { FAQNavMenu } from "../../../../lib/constants";
+} from "../../../../../../lib/FAQItems";
+import { FAQNavMenu } from "../../../../../../lib/constants";
 
 const FAQs = () => {
     return (
