@@ -4,10 +4,15 @@ import Image from "next/image";
 
 import React from "react";
 
+<<<<<<< HEAD:components/HomeSplash.tsx
 import ContactFormOverlay from "./contact-form-section/ContactFormOverlay";
 import SplashPic from "../public/assets/imgs/nick-joe-pic.jpg";
 import Logo from "../public/assets/icons/brite-logo.png";
 import Link from "next/link";
+=======
+import SplashPic from "../../../../../public/assets/imgs/nick-joe-pic.jpg";
+import ContactFormOverlay from "../../../components/forms/contact-form-overlay";
+>>>>>>> 26f492f073dfe21692697cdf85f54477a3c1487a:app/(root)/(routes)/(home)/components/home-splash.tsx
 
 const HomeSplash = () => {
     return (
