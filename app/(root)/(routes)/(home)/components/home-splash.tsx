@@ -10,7 +10,7 @@ import ContactFormOverlay from "../../../components/forms/contact-form-overlay";
 const HomeSplash = () => {
     return (
         <div className="relative w-full text-white lg:h-screen">
-            <div className="absolute hidden right-[250px] top-[20%] lg:flex lg:top-[15%] lg:right-[350px] xl:right-[450px]">
+            <div className="absolute hidden right-[250px] top-[20%] lg:flex lg:top-[7%] lg:right-[350px] xl:right-[450px]">
                 <ContactFormOverlay />
             </div>
             {/* SHADOW */}

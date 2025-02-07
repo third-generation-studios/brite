@@ -55,10 +55,10 @@ export const NavMenu: NavMenuType[] = [
         title: "Services",
         link: "",
     },
-    {
-        title: "Newsletter",
-        link: "/newsletter",
-    },
+    // {
+    //     title: "Newsletter",
+    //     link: "/newsletter",
+    // },
     // {
     //     title: "Our Story",
     //     link: "/our-story",

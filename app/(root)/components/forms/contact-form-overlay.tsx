@@ -28,7 +28,6 @@ type FormValues = {
     service: string;
     referralSource?: string;
     createdAt: string;
-    frequency?: string;
     comment?: string;
 };
 
@@ -82,8 +81,7 @@ const ContactFormOverlay = () => {
             email: getValues("email"),
             address: getValues("address"),
             service: getValues("service"),
-            referralSource: getValues("referralSource"), // Adding howHeard value
-            frequency: getValues("frequency"),
+            referralSource: getValues("referralSource"),
             comment: getValues("comment"),
             createdAt: createdAt,
         };
@@ -127,7 +125,7 @@ const ContactFormOverlay = () => {
                 />
             )}
             {loading && <Loader />}
-            <div className="flex flex-col w-[400px] bg-zinc-900/80 py-6 rounded-2xl shadow-blue-600 shadow-lg border-2">
+            <div className="flex flex-col w-[500px] bg-zinc-900/80 py-6 rounded-2xl shadow-blue-600 shadow-lg border-2">
                 <div className="flex justify-center">
                     <Image className="w-20" src={Logo} alt="Brite Logo" />
                 </div>
@@ -147,18 +145,12 @@ const ContactFormOverlay = () => {
                                 control={control}
                                 errors={errors}
                                 validationRules={{
-                                    required: "Invalid",
-                                    minLength: {
-                                        value: 2,
-                                        message: "Must be at least 2 characters long",
-                                    },
-                                    maxLength: {
-                                        value: 100,
-                                        message: "Cannot exceed 100 characters",
-                                    },
+                                    required: "Required",
+                                    minLength: { value: 2, message: "Min 2 characters" },
+                                    maxLength: { value: 100, message: "Max 100 characters" },
                                     pattern: {
                                         value: /^[^\s]+(\s+[^\s]+)*$/,
-                                        message: "Cannot contain spaces",
+                                        message: "Invalid format",
                                     },
                                 }}
                             />
@@ -170,19 +162,46 @@ const ContactFormOverlay = () => {
                             control={control}
                             errors={errors}
                             validationRules={{
-                                required: "Invalid",
-                                minLength: {
-                                    value: 2,
-                                    message: "Must be at least 2 characters long",
-                                },
-                                maxLength: { value: 100, message: "Cannot exceed 100 characters" },
+                                required: "Required",
+                                minLength: { value: 2, message: "Min 2 characters" },
+                                maxLength: { value: 100, message: "Max 100 characters" },
                                 pattern: {
                                     value: /^[^\s]+(\s+[^\s]+)*$/,
-                                    message: "Cannot contain spaces",
+                                    message: "Invalid format",
                                 },
                             }}
                         />
                     </div>
+                    <InputAlt
+                        inputName="email"
+                        inputLabel="Email"
+                        placeholder="Email*"
+                        control={control}
+                        errors={errors}
+                        validationRules={{
+                            required: "Required",
+                            pattern: {
+                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                                message: "Invalid email format",
+                            },
+                        }}
+                    />
+                    <span className="mt-4">
+                        <InputAlt
+                            inputName="phone"
+                            inputLabel="Phone Number"
+                            placeholder="Phone Number*"
+                            control={control}
+                            errors={errors}
+                            validationRules={{
+                                required: "Required",
+                                pattern: {
+                                    value: /^[0-9]{10,15}$/,
+                                    message: "Enter a valid phone number",
+                                },
+                            }}
+                        />
+                    </span>
                     <Dropdown
                         inputName="service"
                         inputLabel="Choose Service:"
@@ -209,10 +228,11 @@ const ContactFormOverlay = () => {
                     <ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={setRecaptchaToken} />
                     <div className={`${inputClicked ? "" : "animate-pulse"} my-10`}>
                         <Button
+                            className="bg-blue-500"
                             type="submit"
                             variant="contained"
                             color="primary"
-                            className="w-full justify-center bg-blue-500"
+                            fullWidth
                         >
                             {pathname === "/contact-us" ? "Contact Us" : "Estimate"}
                         </Button>

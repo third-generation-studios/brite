@@ -32,7 +32,7 @@ const Dropdown = ({
                 render={({ field }) => (
                     <>
                         <select
-                            style={{ border: "1px black solid" }}
+                            // style={{ border: "1px black solid" }}
                             required
                             className={`${InputClass} py-4`}
                             {...field}

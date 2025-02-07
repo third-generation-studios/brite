@@ -34,7 +34,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 render={({ field }) => (
                     <select
                         {...field}
-                        className="mt-1 block w-full px-3 py-2  text-gray-700 border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        className="mt-1 block w-full px-3 py-2 border-[1px] text-gray-700 border-black/10 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     >
                         <option value="">Select an option</option>
                         {options.map((option, index) => (
