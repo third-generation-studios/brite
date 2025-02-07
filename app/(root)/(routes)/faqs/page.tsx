@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import React from "react";
 
 import ScrollUpBtn from "../../components/scroll-up-btn";
-import FAQs from "../../components/faqs";
+import FAQs from "./components/faqs";
 
 export const metadata: Metadata = {
     title: "Brite FAQs",

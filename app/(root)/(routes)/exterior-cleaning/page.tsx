@@ -8,7 +8,7 @@ import IconBanner from "../../components/icon-banner";
 
 import PressureWashing from "../../../../public/assets/imgs/ex-cleaning.png";
 import ComponentSplash from "../../components/component-splash";
-import PromoRow from "../../../../components/products/product-row";
+import PromoRow from "../../components/products/product-row";
 
 export const metadata: Metadata = {
     title: "Brite's Exterior Cleaning",

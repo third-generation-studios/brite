@@ -4,14 +4,14 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-import logoImage from "../../public/assets/icons/brite-logo.png";
-import { Category, ProductType } from "../../lib/types";
+import logoImage from "../../../../public/assets/icons/brite-logo.png";
+import { Category, ProductType } from "../../../../lib/types";
 import ProductItem from "./product-item";
 import {
     CommercialServicesProducts,
     ExteriorCleaningProducts,
     HolidayLightingProducts,
-} from "../../lib/Products";
+} from "../../../../lib/Products";
 // Swiper
 import { Pagination } from "swiper/modules";
 import "swiper/css";

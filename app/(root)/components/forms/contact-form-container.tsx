@@ -12,8 +12,8 @@ import HandyMan from "../../../../public/assets/imgs/handyman.webp";
 
 import AuthorizationCheckbox from "./components/authorization-checkbox";
 import sendEmail from "../../../../lib/email-service";
-import ConfirmationModal from "../../../../components/modals/ConfirmationModal";
-import SuccessModal from "../../../../components/modals/SuccessModal";
+import ConfirmationModal from "../modals/ConfirmationModal";
+import SuccessModal from "../modals/SuccessModal";
 import { Loader } from "../loader";
 import Input from "../inputs/Input";
 import Textarea from "../inputs/Textarea";

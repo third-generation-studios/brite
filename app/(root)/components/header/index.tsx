@@ -12,7 +12,7 @@ import Logo from "../../../../public/assets/icons/brite-logo.png";
 import { NavMenu } from "../../../../lib/constants";
 import ServicesMenu from "./ServicesMenu";
 import { NavMenuType } from "../../../../lib/types";
-import Button from "../../../../components/button";
+import Button from "../button";
 
 export default function Navbar() {
     // Constants

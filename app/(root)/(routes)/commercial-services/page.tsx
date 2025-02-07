@@ -9,7 +9,7 @@ import IconBanner from "../../components/icon-banner";
 import CommercialServicePic from "../../../../public/assets/imgs/h-b-jn.jpg";
 import ComponentSplash from "../../components/component-splash";
 import { FaTrashCan } from "react-icons/fa6";
-import PromoRow from "../../../../components/products/product-row";
+import PromoRow from "../../components/products/product-row";
 
 export const metadata: Metadata = {
     title: "Brite's Commercial Services",
