@@ -7,9 +7,9 @@ interface IFAQItemProps {
 
 const FAQItem = (props: IFAQItemProps) => {
     return (
-        <div className="flex flex-col border-b-[1px] border-zinc-300 w-full mb-10 pb-10">
-            <h5 className="text-slate-500 my-6 text-xl font-bold">{props.question}</h5>
-            <p className="text-sm text-slate-500">{props.answer}</p>
+        <div className="flex flex-col border-b border-slate-200 w-full mb-8 pb-8 last:border-b-0 last:mb-0 last:pb-0">
+            <h5 className="text-slate-900 my-4 text-xl font-bold">{props.question}</h5>
+            <p className="text-slate-600 leading-relaxed">{props.answer}</p>
         </div>
     );
 };

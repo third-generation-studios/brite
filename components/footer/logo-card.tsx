@@ -6,17 +6,30 @@ import Logo from "@/public/assets/icons/brite-logo.png";
 
 const LogoCard = () => {
     return (
-        <span className="flex flex-col justify-center items-center my-4 border-b-[1px] border-zinc-900 border-b-1 pt-10 pb-16 md:flex-1 md:border-none md:justify-start">
-            <div className="flex flex-col items-center md:rounded-2xl md:p-10">
-                <span className="mb-2">
-                    <Image loading="eager" width={100} src={Logo} alt="logo" />
-                </span>
-                <span className="flex items-center text-xs text-zinc-500">
-                    <FaRegCopyright className="mx-2" />
-                    2025 Brite Exterior Cleaning
-                </span>
+        <div className="flex flex-col items-start space-y-6">
+            {/* Logo */}
+            <div className="flex items-center">
+                <Image 
+                    loading="eager" 
+                    width={120} 
+                    src={Logo} 
+                    alt="Brite Logo" 
+                    className="transition-transform hover:scale-105"
+                />
             </div>
-        </span>
+
+            {/* Tagline */}
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Premium exterior cleaning services that elevate your home or business. 
+                Professional, reliable, and worry-free maintenance solutions.
+            </p>
+
+            {/* Copyright */}
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+                <FaRegCopyright className="text-gray-600" />
+                <span>2025 Brite Exterior Cleaning</span>
+            </div>
+        </div>
     );
 };
 

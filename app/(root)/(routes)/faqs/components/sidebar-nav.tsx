@@ -59,42 +59,41 @@ const FAQSidebarNav = (props: IFAQSidebarNavProps) => {
         return (
             <nav
                 className={`${
-                    sticky ? "fixed top-[144px] left-0 w-full bg-white" : ""
-                } flex flex-col items-start w-full justify-between border-y-[1px] shadow-md border-zinc-200 p-4 z-50 transition-transform duration-500 ease-in-out md:hidden`}
+                    sticky ? "fixed top-[144px] left-0 w-full bg-white shadow-lg" : ""
+                } flex flex-col items-start w-full justify-between border-y border-slate-200 p-4 z-50 transition-transform duration-500 ease-in-out md:hidden rounded-lg`}
             >
                 <div className="relative flex w-full h-full">
                     <div className="absolute top-5 right-5">
                         {dropdownOpen ? (
-                            <FaChevronUp onClick={() => setDropdownOpen(false)} size={15} />
+                            <FaChevronUp onClick={() => setDropdownOpen(false)} size={15} className="text-slate-600" />
                         ) : (
-                            <FaChevronDown onClick={() => setDropdownOpen(true)} size={15} />
+                            <FaChevronDown onClick={() => setDropdownOpen(true)} size={15} className="text-slate-600" />
                         )}
                     </div>
                 </div>
                 {props.items.map((item, index) => {
                     if (linkHash === item.link) {
                         return (
-                            // <div className="flex items-center justify-between w-full" key={index}>
                             <h5
                                 key={index}
-                                className="text-blue-600 underline underline-offset-2 px-8 py-4"
+                                className="text-blue-600 underline underline-offset-2 px-8 py-4 font-semibold"
                             >
                                 {item.title}
                             </h5>
-                            // </div>
                         );
                     } else {
                         return (
                             <div key={index}>
                                 {dropdownOpen && (
                                     <div
-                                        className="py-4 px-8 text-blue-600 text-sm md:hidden"
+                                        className="py-4 px-8 text-slate-600 text-sm md:hidden hover:text-blue-600 transition-colors"
                                         key={index}
                                     >
                                         {dropdownOpen && (
                                             <Link
                                                 onClick={(e) => handleScrollToSection(e, item.link)}
                                                 href={item.link}
+                                                className="hover:text-blue-600 transition-colors"
                                             >
                                                 {item.title}
                                             </Link>
@@ -112,20 +111,23 @@ const FAQSidebarNav = (props: IFAQSidebarNavProps) => {
     const renderRegularNav = () => {
         return (
             <div className="hidden flex-col text-sm pl-10 md:flex md:flex-1">
-                {props.items.map((item, index) => (
-                    <Link
-                        key={index}
-                        href={item.link}
-                        onClick={(e) => handleScrollToSection(e, item.link)}
-                        className={`pb-10 text-blue-600 hover:text-blue-950 ease-in-out duration-300 ${
-                            linkHash === item.link
-                                ? "underline underline-offset-4 text-blue-950"
-                                : ""
-                        }`}
-                    >
-                        <h5>{item.title}</h5>
-                    </Link>
-                ))}
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-6">FAQ Categories</h3>
+                    {props.items.map((item, index) => (
+                        <Link
+                            key={index}
+                            href={item.link}
+                            onClick={(e) => handleScrollToSection(e, item.link)}
+                            className={`pb-4 text-slate-600 hover:text-blue-600 ease-in-out duration-300 transition-colors ${
+                                linkHash === item.link
+                                    ? "text-blue-600 font-semibold"
+                                    : ""
+                            }`}
+                        >
+                            <h5 className="hover:translate-x-1 transition-transform">{item.title}</h5>
+                        </Link>
+                    ))}
+                </div>
             </div>
         );
     };

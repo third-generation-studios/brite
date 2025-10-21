@@ -24,7 +24,7 @@ export default function Newsletter() {
     };
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-900 via-blue-600 to-blue-400 p-6">
+        <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-900 via-blue-600 to-blue-400 mt-10 p-6">
             <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-xl">
                 <h2 className="text-2xl font-semibold text-gray-800 text-center">
                     Subscribe to Our Newsletter

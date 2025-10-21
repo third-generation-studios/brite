@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { MdCopyright } from "react-icons/md";
 
@@ -12,32 +13,85 @@ import LogoCard from "./logo-card";
 
 const Footer = () => {
     return (
-        // FULL CONTAINER
-        <footer className="w-full bg-black text-white flex flex-col justify-center px-4">
-            {/* FOOTER MENU */}
-            <div className="flex flex-col self-center w-full md:flex-row md:py-2">
-                <LogoCard />
-                <div className="flex flex-col md:flex-row md:w-1/2 md:self-center">
-                    <FooterMenu />
-                    <ContactCard />
-                </div>
+        <footer className="relative w-full bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+            {/* Decorative Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
             </div>
-            {/* SOCIALS  */}
-            <SocialsCard />
-            {/* CREATED BY */}
-            <div className="flex flex-col items-center justify-center text-center self-center w-full border-t-[1px] py-14 text-xs border-zinc-900">
-                <div className="flex flex-col items-center">
-                    <p className="text-xs">Created by</p>
-                    {/* THIRD GEN LOGO */}
-                    <Link
-                        className="flex items-center"
-                        target="_blank"
-                        href="https://www.thirdgenerationstudios.com/"
-                    >
-                        <MdCopyright size={12} className="mb-2 mr-1 text-zinc-700" />
-                        <p className="text-zinc-500">Third Generation Studios</p>
-                    </Link>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Main Footer Content */}
+                <div className="py-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+                        {/* Logo Section - Takes 4 columns on large screens */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="lg:col-span-4"
+                        >
+                            <LogoCard />
+                        </motion.div>
+
+                        {/* Footer Menu - Takes 4 columns on large screens */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1, duration: 0.6 }}
+                            className="lg:col-span-4"
+                        >
+                            <FooterMenu />
+                        </motion.div>
+
+                        {/* Contact Card - Takes 4 columns on large screens */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                            className="lg:col-span-4"
+                        >
+                            <ContactCard />
+                        </motion.div>
+                    </div>
                 </div>
+
+                {/* Social Media Section */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    className="border-t border-gray-800"
+                >
+                    <SocialsCard />
+                </motion.div>
+
+                {/* Bottom Bar - Created By */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    className="border-t border-gray-800 py-8"
+                >
+                    <div className="flex flex-col items-center justify-center text-center space-y-2">
+                        <p className="text-sm text-gray-400">Designed & Developed by</p>
+                        <Link
+                            className="flex items-center gap-1 group transition-all duration-300"
+                            target="_blank"
+                            href="https://www.thirdgenerationstudios.com/"
+                        >
+                            <MdCopyright size={14} className="text-gray-600 group-hover:text-blue-400 transition-colors" />
+                            <span className="text-gray-500 group-hover:text-blue-400 transition-colors font-medium">
+                                Third Generation Studios
+                            </span>
+                        </Link>
+                    </div>
+                </motion.div>
             </div>
         </footer>
     );

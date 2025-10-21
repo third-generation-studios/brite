@@ -1,7 +1,7 @@
-import { Promotion } from "@/sanity.types";
+import type { Promotion } from "@/sanity.types";
 import { getAllPromotions } from "@/sanity/lib/promotions/getAllPromotions";
 import PromotionList from "./components/promotion-list";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Current Promotions | Brite Exterior Cleaning Services",
@@ -40,25 +40,58 @@ export default async function PromotionsPage() {
         .sort(sortByDate);
 
     return (
-        <div className="max-w-5xl mx-auto px-12 py-16 bg-gradient-to-b from-blue-500 via-pink-400 to-white">
-            <h1 className="text-3xl font-bold text-center mb-6">All Promotions</h1>
+        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-50 mt-10">
+            {/* Hero Section */}
+            <div className="text-white px-4 py-24 text-center max-w-4xl mx-auto">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6">Special Promotions</h1>
+                <p className="text-xl text-slate-300">
+                    Save on our premium exterior cleaning services with exclusive offers
+                </p>
+            </div>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-semibold text-green-400 mb-4">🔥 Active Promotions</h2>
-                <PromotionList promotions={activePromotions} />
-            </section>
+            {/* Promotions Content */}
+            <div className="max-w-7xl mx-auto px-4 pb-24">
+                {/* Active Promotions */}
+                {activePromotions.length > 0 && (
+                    <section className="mb-16">
+                        <div className="flex items-center gap-3 mb-8">
+                            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            <h2 className="text-3xl font-bold text-white">Active Promotions</h2>
+                        </div>
+                        <PromotionList promotions={activePromotions} status="active" />
+                    </section>
+                )}
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-semibold text-yellow-500 mb-4">
-                    ⏳ Upcoming Promotions
-                </h2>
-                <PromotionList promotions={upcomingPromotions} />
-            </section>
+                {/* Upcoming Promotions */}
+                {upcomingPromotions.length > 0 && (
+                    <section className="mb-16">
+                        <div className="flex items-center gap-3 mb-8">
+                            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <h2 className="text-3xl font-bold text-white">Coming Soon</h2>
+                        </div>
+                        <PromotionList promotions={upcomingPromotions} status="upcoming" />
+                    </section>
+                )}
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-semibold text-gray-500 mb-4">📅 Expired Promotions</h2>
-                <PromotionList promotions={expiredPromotions} />
-            </section>
+                {/* Expired Promotions */}
+                {expiredPromotions.length > 0 && (
+                    <section className="mb-16">
+                        <div className="flex items-center gap-3 mb-8">
+                            <div className="w-3 h-3 bg-slate-500 rounded-full"></div>
+                            <h2 className="text-3xl font-bold text-slate-400">Past Promotions</h2>
+                        </div>
+                        <PromotionList promotions={expiredPromotions} status="expired" />
+                    </section>
+                )}
+
+                {/* No Promotions Message */}
+                {activePromotions.length === 0 && upcomingPromotions.length === 0 && expiredPromotions.length === 0 && (
+                    <div className="text-center py-24">
+                        <p className="text-slate-400 text-xl">No promotions available at this time.</p>
+                        <p className="text-slate-500 mt-4">Check back soon for exciting offers!</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

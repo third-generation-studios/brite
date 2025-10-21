@@ -8,9 +8,14 @@ interface IFAQContainerProps {
 
 const FAQContainer = (props: IFAQContainerProps) => {
     return (
-        <div id={props.id} className="flex flex-col w-full flex-1 px-10 lg:px-32 px">
-            <h5 className="text-blue-600 text-4xl font-semibold">{props.title}</h5>
-            {props.children}
+        <div id={props.id} className="flex flex-col w-full flex-1 mb-16">
+            <div className="flex items-center gap-3 mb-8">
+                <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                <h2 className="text-3xl font-bold text-white">{props.title}</h2>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+                {props.children}
+            </div>
         </div>
     );
 };
