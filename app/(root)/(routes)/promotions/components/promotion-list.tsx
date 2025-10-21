@@ -13,8 +13,12 @@ const PromotionList = ({ promotions, status }: PromotionListProps) => {
 
     return (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {promotions.map((promotion) => (
-                <PromotionCard key={promotion._id} promotion={promotion} status={status} />
+            {promotions.map((promotion, index) => (
+                <PromotionCard
+                    key={`${promotion._id}-${index}`}
+                    promotion={promotion}
+                    status={status}
+                />
             ))}
         </div>
     );

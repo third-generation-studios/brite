@@ -14,7 +14,7 @@ export default function HeroSection() {
                     src="/assets/imgs/action-2.jpg"
                     alt="Professional exterior cleaning service"
                     fill
-                    className="bg-center"
+                    className="object-cover object-top"
                     priority
                 />
                 {/* Dark overlay for text readability */}
@@ -22,7 +22,10 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 text-center" style={{ paddingTop: 'calc(var(--banner-height, 0px) + 80px + 1rem)' }}>
+            <div
+                className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 text-center"
+                style={{ paddingTop: "calc(var(--banner-height, 0px) + 80px + 1rem)" }}
+            >
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
