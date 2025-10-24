@@ -19,9 +19,9 @@ const Button = (props: IButtonProps) => {
             type={props.submit ? "submit" : "button"}
             className={`${props.className} ${props.roundedFull ? "rounded-full" : "rounded-lg"} ${
                 props.altColor
-                    ? "text-blue-600 bg-transparent transition-all duration-300 ease-in-out hover:scale-105 hover:text-black"
-                    : "bg-blue-600 transition-all duration-300 ease-in-out hover:text-black hover:scale-105 text-white"
-            } flex items-center py-2 px-6 shadow-lg`}
+                    ? "text-blue-600 bg-transparent transition-all duration-300 ease-in-out hover:scale-105"
+                    : "bg-blue-600 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:scale-105 text-white"
+            } flex items-center py-2 px-6 shadow-md font-semibold`}
         >
             {props.leftChildren ? props.children : null}
             <p onClick={props.onClick}>

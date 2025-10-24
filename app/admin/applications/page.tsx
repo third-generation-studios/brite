@@ -9,7 +9,7 @@ const AdminApplicationsPage = async () => {
                 All Applications
             </h2>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {applications.map((app) => (
+                {applications.map((app: any) => (
                     <div
                         key={app._id}
                         className="bg-gray-50 shadow-md rounded-lg p-6 border flex flex-col"

@@ -17,8 +17,14 @@ const UserIcon = () => {
     return (
         <ClerkLoaded>
             {user ? (
-                <div className="flex items-center space-x-2">
-                    <UserButton>
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                    <UserButton
+                        appearance={{
+                            elements: {
+                                avatarBox: "w-8 h-8 sm:w-10 sm:h-10"
+                            }
+                        }}
+                    >
                         {isAdmin(userEmail as string) ? (
                             <UserButton.MenuItems>
                                 <UserButton.Action
@@ -61,7 +67,7 @@ const UserIcon = () => {
                 <ClerkLoaded>
                     <button
                         onClick={() => setShowSignIn(true)}
-                        className="bg-blue-500 hover:bg-blue-600 transition-all ease-in-out hover:scale-105 duration-300 text-white font-bold py-2 px-4 rounded-full"
+                        className="bg-blue-500 hover:bg-blue-600 transition-all ease-in-out hover:scale-105 duration-300 text-white font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full text-xs sm:text-sm"
                     >
                         Sign In
                     </button>

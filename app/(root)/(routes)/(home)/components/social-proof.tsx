@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Script from "next/script";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@mui/material";
 
 const SocialProof = () => {
     const router = useRouter();
@@ -12,7 +11,7 @@ const SocialProof = () => {
     return (
         // TODO: UPGRADE TO BASIC PLAN FOR ELFSIGHT TO TAKE OFF ELFSIGHT BRANDING
         <motion.section
-            className="bg-white w-full flex flex-col items-center py-24 px-10 justify-center relative overflow-hidden"
+            className="bg-slate-50 w-full flex flex-col items-center py-24 px-10 justify-center relative overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -27,14 +26,12 @@ const SocialProof = () => {
                 data-elfsight-app-lazy
             ></div>
 
-            <Button
-                variant="contained"
-                color="primary"
-                className="mt-10 w-[300px] bg-blue-500"
-                onClick={() => router.push("/estimate")} // Redirect to /estimate page on click
+            <button
+                className="mt-10 px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                onClick={() => router.push("/estimate")}
             >
                 Get Your Free Estimate!
-            </Button>
+            </button>
         </motion.section>
     );
 };

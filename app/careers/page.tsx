@@ -28,7 +28,7 @@ const CareersPage = async () => {
     const jobs = await getAllJobOpenings();
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-50 mt-10">
             {/* Hero Section */}
             <Hero />
 

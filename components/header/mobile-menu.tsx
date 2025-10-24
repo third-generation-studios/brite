@@ -10,7 +10,7 @@ import { FaPhone } from "react-icons/fa6";
 import { NavMenu } from "../../lib/constants";
 import Button from "@/components/button";
 
-export default function MobileMenu() {
+export default function MobileMenu({ scrolled = false }: { scrolled?: boolean }) {
     // Constants
     const pathname = usePathname();
 
@@ -18,7 +18,6 @@ export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
     const openMobileMenu = () => setIsOpen(true);
     const closeMobileMenu = () => setIsOpen(false);
-    // const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
 
     useEffect(() => {
         closeMobileMenu();
@@ -48,9 +47,13 @@ export default function MobileMenu() {
             <button
                 onClick={openMobileMenu}
                 aria-label="Open mobile menu"
-                className="flex h-11 w-11 items-center justify-center rounded-full text-black transition-colors overflow-hidden"
+                className={`flex h-10 w-10 items-center justify-center rounded-full transition-all ${
+                    scrolled 
+                        ? "text-gray-800 hover:bg-gray-100" 
+                        : "text-white hover:bg-white/20"
+                }`}
             >
-                <Bars3Icon className="h-6 text-black" />
+                <Bars3Icon className="h-6" />
             </button>
 
             <Transition show={isOpen}>

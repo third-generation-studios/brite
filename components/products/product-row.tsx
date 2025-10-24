@@ -51,11 +51,11 @@ const ProductRow = (props: IProductRowProps) => {
 
     return (
         <div
-            className={`${className} w-full text-white relative border-y border-white shadow-lg overflow-hidden bg-white`}
+            className={`${className} w-full text-white relative shadow-lg overflow-hidden bg-slate-50`}
         >
-            <div className="flex flex-col justify-center items-center w-full py-24 md:py-48">
+            <div className="flex flex-col justify-center items-center w-full py-16 md:py-24">
                 {/* Description Title for specific category */}
-                <h5 className="text-4xl flex items-center justify-center text-black w-full px-10 text-center font-semibold md:px-[300px]  ">
+                <h5 className="text-3xl md:text-4xl flex items-center justify-center text-slate-900 w-full px-10 text-center font-bold md:px-[300px]">
                     {title}
                 </h5>
                 {/* Brite Logo */}

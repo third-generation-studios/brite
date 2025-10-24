@@ -1,15 +1,24 @@
-import { Promotion } from "@/sanity.types";
+import type { Promotion } from "@/sanity.types";
 import PromotionCard from "./promotion-card";
 
-const PromotionList = ({ promotions }: { promotions: Promotion[] }) => {
+interface PromotionListProps {
+    promotions: Promotion[];
+    status: "active" | "upcoming" | "expired";
+}
+
+const PromotionList = ({ promotions, status }: PromotionListProps) => {
     if (promotions.length === 0) {
-        return <p className="text-gray-400">No promotions available.</p>;
+        return <p className="text-slate-400">No promotions available.</p>;
     }
 
     return (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {promotions.map((promotion) => (
-                <PromotionCard key={promotion._id} promotion={promotion} />
+            {promotions.map((promotion, index) => (
+                <PromotionCard
+                    key={`${promotion._id}-${index}`}
+                    promotion={promotion}
+                    status={status}
+                />
             ))}
         </div>
     );
